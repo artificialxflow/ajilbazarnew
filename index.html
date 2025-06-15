@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کاتالوگ آجیل بازار</title>
+    <!-- Bootstrap RTL CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts - Vazir -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5530;
+            --secondary-color: #4a7c59;
+            --accent-color: #8fbc8f;
+            --gold-color: #d4af37;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        * { font-family: 'Vazirmatn', sans-serif; }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: var(--shadow);
+        }
+        .logo {
+            width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .brand-name { font-size: 2rem; font-weight: 700; margin: 0; }
+        .contact-info { text-align: left; }
+        .contact-item { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .contact-item i { width: 20px; text-align: center; }
+        .whatsapp-link { color: #25d366; text-decoration: none; }
+        .email-link { color: #ffd700; text-decoration: none; }
+        .intro-section {
+            background: var(--white);
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        .intro-title { color: var(--primary-color); font-weight: 700; font-size: 2.2rem; margin-bottom: 2rem; text-align: center; }
+        .intro-text { font-size: 1.1rem; text-align: center; color: var(--text-light); margin-bottom: 2rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .feature-card { background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); color: white; padding: 1.5rem; border-radius: 15px; text-align: center; box-shadow: var(--shadow); }
+        .feature-icon { font-size: 2.2rem; margin-bottom: 0.7rem; color: var(--gold-color); }
+        .feature-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.7rem; }
+        .products-section { padding: 3rem 0; }
+        .section-title { color: var(--primary-color); font-weight: 700; font-size: 2.2rem; text-align: center; margin-bottom: 2rem; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .product-card { background: var(--white); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); position: relative; transition: all 0.3s; }
+        .product-card:hover { transform: translateY(-7px) scale(1.02); box-shadow: var(--shadow-hover); }
+        .product-image { width: 100%; height: 200px; object-fit: cover; }
+        .product-info { padding: 1rem; text-align: center; }
+        .product-name { font-size: 1rem; font-weight: 600; color: var(--text-dark); margin: 0; }
+        .product-badge { position: absolute; top: 12px; right: 12px; background: linear-gradient(135deg, var(--gold-color), #b8860b); color: white; padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .contact-section { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 3rem 0; margin-top: 3rem; }
+        .contact-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .contact-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 18px; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
+        .contact-card i { font-size: 2.2rem; margin-bottom: 0.7rem; color: var(--gold-color); }
+        .contact-card h4 { font-size: 1.2rem; margin-bottom: 0.7rem; font-weight: 600; }
+        .contact-card a { color: white; text-decoration: none; font-size: 1rem; }
+        .contact-card a:hover { color: var(--gold-color); }
+        .footer { background: var(--text-dark); color: white; text-align: center; padding: 1.5rem 0; margin-top: 1.5rem; }
+        .footer-link { color: var(--gold-color); text-decoration: none; font-weight: 600; }
+        .footer-link:hover { color: var(--accent-color); }
+        @media (max-width: 768px) {
+            .header { padding: 1.2rem 0; }
+            .brand-name { font-size: 1.3rem; }
+            .intro-title, .section-title, .contact-title { font-size: 1.3rem; }
+            .products-grid, .features-grid, .contact-grid { grid-template-columns: 1fr; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 d-flex flex-column align-items-start">
+                    <div class="contact-info w-100 d-flex flex-column align-items-start">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>۹۸۹۲۱۴۸۴۳۳۶۱+</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>sales@madebypersians.ir</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>زبان: فارسی</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <span class="brand-name" style="font-size:2.2rem; font-weight:700;">MadeByPersians.ir</span>
+                    <img src="project/logo-rb.png" alt="MadeByPersians Logo" class="logo ms-3">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <h2 class="intro-title">به آجیل بازار خوش آمدید</h2>
+            <p class="intro-text">
+                در <strong>آجیل بازار</strong> بهترین آجیل و خشکبار را با کیفیت صادراتی و قیمت مناسب مستقیماً از تولیدکنندگان ایرانی تهیه کنید!
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                    <h4 class="feature-title">دسترسی مستقیم</h4>
+                    <p>ارتباط مستقیم با تولیدکنندگان و حذف واسطه‌ها</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-award"></i></div>
+                    <h4 class="feature-title">کیفیت برتر</h4>
+                    <p>محصولات با کیفیت صادراتی و استاندارد بین‌المللی</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h4 class="feature-title">ارسال سریع</h4>
+                    <p>امکان ارسال سریع به سراسر جهان</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="section-title">کاتالوگ محصولات</h2>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">تماس با ما</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>واتساپ</h4>
+                    <a href="https://wa.me/989214843361" target="_blank">+۹۸۹۲۱۴۸۴۳۳۶۱</a>
+                    <p style="margin-top: 0.7rem; font-size: 0.9rem;">پاسخگویی ۲۴ ساعته</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>ایمیل</h4>
+                    <a href="mailto:sales@ajilbazar.com">sales@ajilbazar.com</a>
+                    <p style="margin-top: 0.7rem; font-size: 0.9rem;">پاسخ در کمتر از ۲۴ ساعت</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © ۲۰۲۴ AjilBazar.com -
+                <a href="#" class="footer-link">بهترین آجیل و خشکبار ایرانی را از ما بخواهید</a>
+            </p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // محصولات (نمونه از project/index.html)
+    const products = [
+        {"product_name": "آجیل چهار مغز خام", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/آجیل-چهار-مغز-خام.jpg"},
+        {"product_name": "آجیل چهار مغز شور", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/آجیل-چهار-مغز-شور.jpg"},
+        {"product_name": "آجیل شیرین", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/آجیل-شیرین-1.jpg"},
+        {"product_name": "آجیل عربی", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/آجیل-عربی.jpg"},
+        {"product_name": "آجیل قاقوت", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/New-Project-12-2.jpg"},
+        {"product_name": "توت خشک صادراتی", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/توت-خشک-صادراتی-1.jpg"},
+        {"product_name": "بادام هندی خام اعلا", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/بادام-هندی-خام-اعلا.jpg"},
+        {"product_name": "خلال پسته", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/New-Project-1-2.jpg"},
+        {"product_name": "نخودچی خام", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/New-Project-27-1.jpg"},
+        {"product_name": "قیصی", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/قیصی-4.jpg"},
+        {"product_name": "زرشک صادراتی", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/زرشک-صادراتی-2_prev_ui.jpg"},
+        {"product_name": "مغز تخمه کدو گوشتی مرغوب شور", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/مغز-تخمه-کدو-گوشتی-مرغوب-شور-2.jpg"},
+        {"product_name": "ماکادمیا (فندق استوایی)", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/ماکادمیا-فندق-استوایی.jpg"},
+        {"product_name": "خرما پیام ممتاز", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/خرما-پیام-ممتاز-2.jpg"},
+        {"product_name": "آلو شابلون", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/New-Project-6-2.jpg"},
+        {"product_name": "انجیر خشک اعلا", "image_url": "https://ajilbazar.com/wp-content/uploads/2024/01/New-Project-3-2.jpg"}
+    ];
+    function getProductBadge(productName) {
+        if (productName.includes('صادراتی')) return 'صادراتی';
+        if (productName.includes('اعلا') || productName.includes('ممتاز')) return 'درجه یک';
+        if (productName.includes('دستچین')) return 'دستچین';
+        if (productName.includes('مرغوب')) return 'مرغوب';
+        return 'کیفیت برتر';
+    }
+    function renderProducts() {
+        const productsGrid = document.getElementById('productsGrid');
+        products.forEach((product, index) => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            const badge = getProductBadge(product.product_name);
+            productCard.innerHTML = `
+                <div class="product-badge">${badge}</div>
+                <img src="${product.image_url}" alt="${product.product_name}" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">${product.product_name}</h3>
+                </div>
+            `;
+            productsGrid.appendChild(productCard);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', renderProducts);
+    </script>
+</body>
+</html> 
